@@ -1,0 +1,39 @@
+@font-face {
+    font-family: Crystal;
+    src: url(../fonts/Crystal.ttf);
+}
+body {
+    background-image: url("../images/hexbg.png");
+}
+#title {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color:  rgb(6, 192, 224);
+    color: white;
+    text-align: center;
+    background-color: black;
+    font-family: Crystal, Arial, Helvetica, sans-serif;
+    padding: 20px 5px 20px 5px;
+    width: 100%;
+    margin: 0;
+    font-size: 5em;
+}
+#crystal-buttons {
+    width: 600px;
+    text-align: center;
+    margin:10px auto;
+
+}
+button {
+    margin: 0;
+    padding: 0;
+}
+.crystal {
+    height: 250px;
+    width: 250px;
+    margin: 0;
+    padding:0;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-drag: none;
+}

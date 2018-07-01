@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="assets/javascript/game.js"></script>
+</head>
+
+<body>
+
+    <h1 id="title">Crystal Collector!</h1>
+
+
+    <div id="crystal-buttons">
+        <button>
+            <img class="crystal" alt=crystal1 src="assets/images/gem1.png">
+        </button><!--
+        --><button>
+            <img class="crystal" alt=crystal2 src="assets/images/gem2.png">
+        </button><!--
+        --><button>
+            <img class="crystal" alt=crystal3 src="assets/images/gem3.png">
+        </button><!--
+        --><button>
+            <img class="crystal" alt=crystal4 src="assets/images/gem4.png">
+        </button>
+    </div>
+    <div>
+        <div id="target-score">
+            <p>0</p>
+
+        </div>
+        <div id="wins-losses">
+            <p>Wins:
+                <span id="wins-count">0</span>
+            </p>
+            <p>Losses:
+                <span id="losses-count">0</span>
+            </p>
+            <p id="win-loss-message"></p>
+        </div>
+    </div>
+    <div class="score">
+        <div id="your-score-is">
+            <p>Your total score is:</p>
+        </div>
+        <div id="new-game">
+            <button id="new-game-button">New game</button>
+        </div>
+        <div id="current-score">
+            <p>0</p>
+        </div>
+    </div>
+</body>
+
+</html>
