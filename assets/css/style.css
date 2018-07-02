@@ -2,8 +2,12 @@
     font-family: Crystal;
     src: url(../fonts/Crystal.ttf);
 }
+.crystal-area, #middle-area {
+    cursor: url("../images/blue-pickaxe-cursor.png"), auto;
+}
 body {
     background-image: url("../images/hexbg.png");
+
 }
 #title {
     -webkit-text-stroke-width: 1px;
@@ -12,28 +16,57 @@ body {
     text-align: center;
     background-color: black;
     font-family: Crystal, Arial, Helvetica, sans-serif;
-    padding: 20px 5px 20px 5px;
+    padding: 20px 0 20px 0;
     width: 100%;
     margin: 0;
     font-size: 5em;
 }
-#crystal-buttons {
-    width: 600px;
-    text-align: center;
-    margin:10px auto;
-
+#middle-area {
+    width: 100%;
 }
-button {
-    margin: 0;
-    padding: 0;
+#crystal-area-top, #crystal-area-bottom {
+    width: 100%;
+    height: 180px;
+}
+#crystal-area-left, #crystal-area-right {
+    width: 36%;
+    height: 530px;
+}
+#crystal-area-left {
+    float: left;
+}
+#crystal-area-right {
+    float: right;
+}
+#crystal-buttons {
+text-align: center;
+    top: 0;
+    width: 28%;
+    height: 530px;
+    display: inline-block;
+}
+.c-button {
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    border-right: 2px solid gray;
+    border-top: 2px solid gray;
+    cursor: pointer;
+    background: linear-gradient(lightgray,white);
+}
+.c-button:active {
+    border: 2px solid gray;
+    background: linear-gradient(white,lightgray);
+}
+.c-button:focus {
+    outline: none;
 }
 .crystal {
     height: 250px;
     width: 250px;
     margin: 0;
-    padding:0;
+    padding: 0;
     display: inline-block;
-    cursor: pointer;
     user-select: none;
     -webkit-user-drag: none;
+
 }
