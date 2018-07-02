@@ -1,45 +1,30 @@
 $(document).ready(function () {
     var crystalGame = {
-
-
+        targetScore: 0,
+        wins: 0,
+        losses: 0,
         currentScore: 0,
         crystalScores: [],
-        gameRunning: false,
-
-        //crystalize() initializes the game.
-
+        gameOver: false,
+        //crystalize() initializes the game. Reinitializes values and updates text on screen.
+        //crystal scores are random numbers 1-12 checked for duplicity and put in an empty array
         crystalize: function () {
+            this.gameOver = false;
             this.currentScore = 0;
+            $("#current-score").text(this.currentScore);
+            this.targetScore = Math.floor(Math.random() * 102 + 19);
+            $("#target-score").text(this.targetScore);
             this.crystalScores = [];
             while (this.crystalScores.length < 4) {
-                var num = (Math.floor(Math.random() * 10) + 1) * 50;
+                var num = Math.floor(Math.random() * 12) + 1;
                 if (this.crystalScores.indexOf(num) > -1) continue;
                 this.crystalScores[this.crystalScores.length] = num;
             }
             console.log(this.crystalScores);
-            this.gameRunning = true;
         },
-
-        clickStart: $("#overlay").click(function() {
-            console.log("hello");
-            $("#overlay").css("visibility","hidden");
-            $("#title-div").css("visibility","visible");
-            $("#crystal-buttons").css("visibility","visible");
-        }),
-
-
-
-        crystalAppear: function() {
-            if (gameRunning) {
-
-            }
-        },
-
-
-
-
-
-
+        //whenever a crystal is clicked, check if game is over. 
+        //If not, add one of the scores in the array to the player's score
+        //If the score becomes equal or greater, run win/loseGame respectively
         scorePoints: $(".crystal").click(function () {
             if (!crystalGame.gameOver) {
                 crystalGame.currentScore += crystalGame.crystalScores[$(".crystal").index(this)];
