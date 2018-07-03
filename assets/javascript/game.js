@@ -20,18 +20,38 @@ $(document).ready(function () {
             this.gameRunning = true;
         },
 
-        clickStart: $("#overlay").click(function() {
+        clickStart: $("#overlay").click(function () {
             console.log("hello");
-            $("#overlay").css("visibility","hidden");
-            $("#title-div").css("visibility","visible");
-            $("#crystal-buttons").css("visibility","visible");
+            $("#overlay").css("visibility", "hidden");
+            $("#title-div").css("visibility", "visible");
+            $("#crystal-buttons").css("visibility", "visible");
+            crystalGame.crystalize();
+            for (let i = 0; i < 20; i++) {
+                crystalGame.crystalAppear();
+            }
         }),
 
 
 
-        crystalAppear: function() {
-            if (gameRunning) {
 
+
+
+        crystalAppear: function () {
+            if (this.gameRunning) {
+                var image = $("<img>");
+                image.attr("src", "assets/images/gem1-100x100.png");
+                image.css("left", 15 + (Math.random() * 80) + "%");
+                image.css("top", 15 + Math.random() * 60 + "%");
+                image.css("position", "absolute");
+                image.css("-webkit-touch-callout", "none");
+                image.css("-webkit-user-select", "none");
+                image.css("-khtml-user-select", "none");
+                image.css("-moz-user-select", "none");
+                image.css("-ms-user-select", "none");
+                image.css("user-select", "none");
+                image.css("-webkit-user-drag", "none");
+                image.addClass("clickCrystals");
+                $("#crystal-area-bottom").append(image);
             }
         },
 
@@ -40,16 +60,9 @@ $(document).ready(function () {
 
 
 
-        scorePoints: $(".crystal").click(function () {
-            if (!crystalGame.gameOver) {
-                crystalGame.currentScore += crystalGame.crystalScores[$(".crystal").index(this)];
-                $("#current-score").text(crystalGame.currentScore);
-                if (crystalGame.currentScore > crystalGame.targetScore) {
-                    crystalGame.loseGame();
-                } else if (crystalGame.currentScore === crystalGame.targetScore) {
-                    crystalGame.winGame();
-                }
-            }
+        scorePoints: $(document).on("click", ".clickCrystals", function () {
+            console.log(this);
+            $(this).css("display", "none");
         }),
         //new game button, hidden during play, pops up so the game isn't automatically restart only functions if game is over
         newGame: $("#new-game-button").click(function () {
@@ -76,5 +89,6 @@ $(document).ready(function () {
             $("#new-game-button").css("visibility", "visible");
         },
     }
-    crystalGame.crystalize();
+
 });
+
