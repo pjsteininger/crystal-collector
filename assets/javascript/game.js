@@ -40,8 +40,8 @@ $(document).ready(function () {
             if (this.gameRunning) {
                 var image = $("<img>");
                 image.attr("src", "assets/images/gem1-100x100.png");
-                image.css("left", 15 + (Math.random() * 80) + "%");
-                image.css("top", 15 + Math.random() * 60 + "%");
+                image.css("left", (Math.random() * 90) + "%");
+                image.css("top", 10 + Math.random() * 80 + "%");
                 image.css("position", "absolute");
                 image.css("-webkit-touch-callout", "none");
                 image.css("-webkit-user-select", "none");
