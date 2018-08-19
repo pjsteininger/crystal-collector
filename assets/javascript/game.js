@@ -24,7 +24,7 @@ $(document).ready(function () {
             console.log("hello");
             $("#overlay").css("visibility", "hidden");
             $("#title-div").css("visibility", "visible");
-            $("#crystal-buttons").css("visibility", "visible");
+            $("#crystal-buttons-div").css("visibility", "visible");
             crystalGame.crystalize();
             for (let i = 0; i < 20; i++) {
                 crystalGame.crystalAppear();
