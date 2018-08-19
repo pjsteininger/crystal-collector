@@ -37,6 +37,7 @@ html {
 body {
     position: absolute;
     background: lightgray;
+    width: 100%;
     /*background-image: url("../images/hexbg.png");
     */
 

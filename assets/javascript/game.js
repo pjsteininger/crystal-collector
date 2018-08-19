@@ -39,7 +39,7 @@ $(document).ready(function () {
         crystalAppear: function () {
             if (this.gameRunning) {
                 var image = $("<img>");
-                image.attr("src", "assets/images/gem1-100x100.png");
+                image.attr("src", "assets/images/diamond.png");
                 image.css("left", (Math.random() * 90) + "%");
                 image.css("top", 10 + Math.random() * 80 + "%");
                 image.css("position", "absolute");
