@@ -87,13 +87,6 @@ body {
     vertical-align: text-bottom;
     text-align: center;
 }
-#crystal-buttons-div {
-
-
-
-
-
-}
 .crystal-button {
     border-left: 2px solid rgb(50,50,50);
     border-bottom: 2px solid rgb(50,50,50);
@@ -129,4 +122,5 @@ body {
     position: absolute;
     top: 0;
     left: 50%;
+    display: none;
 }
