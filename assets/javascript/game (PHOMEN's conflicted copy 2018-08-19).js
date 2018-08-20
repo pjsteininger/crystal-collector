@@ -24,36 +24,34 @@ $(document).ready(function () {
             console.log("hello");
             $("#overlay").css("visibility", "hidden");
             $("#title-div").css("visibility", "visible");
-            $("#belt-div").css("visibility", "visible");
+            $("#crystal-buttons").css("visibility", "visible");
             crystalGame.crystalize();
-            $(".crystal-button").on("click", function() {
-                for (let i = 0; i < 10; i++) {
-                    crystalGame.crystalAppear($(this).children().attr("src"));
-                }
-            });
-
+            for (let i = 0; i < 20; i++) {
+                crystalGame.crystalAppear();
+            }
         }),
 
-        crystalAppear: function (src) {
+
+
+
+
+
+        crystalAppear: function () {
             if (this.gameRunning) {
                 var image = $("<img>");
-                image.attr("src", src);
-                image.css({
-                    height: "50px",
-                    width: "50px",
-                    "position": "absolute",
-                    "left": Math.random() * ($("#game-area").width() - 100) + 30,
-                    "top": Math.random() * ($("#belt-div").offset().top - $("#game-area").offset().top - 80) +$("#game-area").offset().top + 10,
-                    "-webkit-touch-callout": "none",
-                    "-webkit-user-select": "none",
-                    "-khtml-user-select": "none",
-                    "-moz-user-select": "none",
-                    "-ms-user-select": "none",
-                    "user-select": "none",
-                    "-webkit-user-drag": "none",
-                });
+                image.attr("src", "assets/images/gem1-100x100.png");
+                image.css("left", (Math.random() * 90) + "%");
+                image.css("top", 10 + Math.random() * 80 + "%");
+                image.css("position", "absolute");
+                image.css("-webkit-touch-callout", "none");
+                image.css("-webkit-user-select", "none");
+                image.css("-khtml-user-select", "none");
+                image.css("-moz-user-select", "none");
+                image.css("-ms-user-select", "none");
+                image.css("user-select", "none");
+                image.css("-webkit-user-drag", "none");
                 image.addClass("clickCrystals");
-                $("#game-area").append(image);
+                $("#crystal-area-bottom").append(image);
             }
         },
 
@@ -63,7 +61,8 @@ $(document).ready(function () {
 
 
         scorePoints: $(document).on("click", ".clickCrystals", function () {
-            $(this).remove();
+            console.log(this);
+            $(this).css("display", "none");
         }),
         //new game button, hidden during play, pops up so the game isn't automatically restart only functions if game is over
         newGame: $("#new-game-button").click(function () {
