@@ -21,7 +21,6 @@ $(document).ready(function () {
         },
 
         clickStart: $("#overlay").click(function () {
-            console.log("hello");
             $("#overlay").css("visibility", "hidden");
             $("#title-div").css("visibility", "visible");
             $("#belt-div").css("visibility", "visible");
@@ -51,6 +50,7 @@ $(document).ready(function () {
                     "-ms-user-select": "none",
                     "user-select": "none",
                     "-webkit-user-drag": "none",
+                    "opacity": 0.7
                 });
                 image.addClass("clickCrystals");
                 $("#game-area").append(image);

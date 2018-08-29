@@ -30,20 +30,12 @@ html {
     opacity: 2;
     -moz-text-size-adjust: auto;       
 }
-@media only screen and (min-width: 600px) {
-    #overlay-message {
-        font-size: 4em;         
-    }
-}
-@media only screen and (min-width: 1000px) {
-    #overlay-message {
-        font-size: 6em; 
-    }
-}
+
 
 body {
     position: absolute;
-    background: lightgray;
+    background: url("../images/cave.jpg");
+    background-size: cover;
     width: 100%;
     height: 100%;
     /*background-image: url("../images/hexbg.png");
@@ -57,23 +49,44 @@ body {
     color: white;
     text-align: center;
     font-family: Crystal, Arial, Helvetica, sans-serif;
-    padding: 1% 0 0 0;
-    width: 100%;
-    font-size: 2em;
+    padding: 5px;
+    
+    font-size: 1.5em;
+    background-image: url("../images/blackcracks.jpg");
+    background-size: cover;
 }
+
 #title-div {
-    width: 100%;
-    height: 6%;
-    background-color: black;
+
     visibility: hidden;
 
+}
+@media only screen and (min-width: 600px) {
+    #overlay-message {
+        font-size: 4em;         
+    }
+    #title {
+        padding: 8px;
+        font-size: 2.5em;
+    }
+}
+@media only screen and (min-width: 768px) {
+    #overlay-message {
+        font-size: 6em; 
+    }
+    #title {
+        padding: 10px;
+        font-size: 3em;
+    }
 }
 #belt-div {
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 90px;
-    background: rgb(160,100,20);
+    background-image: url("../images/blackcracks.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     visibility: hidden;
     border-top: 2px solid black;
     text-align: center;

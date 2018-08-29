@@ -1,3 +1,29 @@
+
+
+"top", 10 + Math.random() * 80 + "%"
+"position", "absolute"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $(document).ready(function () {
     var crystalGame = {
         targetScore: 0,
